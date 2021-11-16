@@ -6,6 +6,7 @@ Tom = Mechanic.create(name: "Tom Braidey", specialty:"Brakes", picture: "https:/
 Ariana = Mechanic.create(name: "Ariana Pequena ", specialty:"Maintenance", picture: "https://s.yimg.com/uu/api/res/1.2/rNYjl.VdIi4Bnd93dCnFGA--~B/aD0xMDgwO3c9MTA4MDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/instyle_846/4ad13370ae66600d2a3b40ace233d3bb")
 Bill = Mechanic.create(name: "Bill Fences", specialty:"Electrical", picture: "https://www.rollingstone.com/wp-content/uploads/2021/02/Gates_thumb_clean.jpg?w=1024")
 Chris = Mechanic.create(name: "Chris Pebbles", specialty:"Engine", picture: "https://s.marketwatch.com/public/resources/images/MW-CY109_rock_ZG_20141103003201.jpg")
+Jessie = Mechanic.create(name: "Jessie Jones", specialty:"Maintenance", picture: "https://media.npr.org/assets/img/2018/01/09/patrice-banks-girls-auto-clinic-1-of-1--3_wide-a92b9dc4341587cc96778a86533bc749a0ecc06e.jpg")
 
 puts "Creating Customers..."
 cust1 = Customer.create(name: "Craig Bell", email: "craigbell12@gmail.com", password: "craigRules123", car_model: "2012 Toyota Prius", phone_number: 1234567890 )
