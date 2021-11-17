@@ -3,19 +3,19 @@ class ApplicationController < Sinatra::Base
   
 
   get "/" do
-    {  customers: Customer.all, 
-        appointments: Appointment.all, 
-        mechanics: Mechanic.all
+    {  all_customers: Customer.total_customers,  
+        all_appointments: Appointment.total_appointments,
+        all_mechanics: Mechanic.total_mechanics
     }.to_json
   end
 
   get "/customers" do  
-    {customers: Customer.all}.to_json
+    Customer.all.to_json
   end  
 
-  
+
   get "/mechanics" do
-    {mechanics: Mechanic.all}.to_json
+    Mechanic.all.to_json
   end
 
   get "/mechanics/:id" do 
@@ -24,7 +24,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get "/appointments" do
-    {appointments: Appointment.all, customers: Customer.all}.to_json
+    Appointment.all.to_json
   end
     
   # get "/bookappointments" do 
@@ -34,8 +34,19 @@ class ApplicationController < Sinatra::Base
   #   }]
   # end 
 
+
+  post "/mechanics" do 
+    new_emp = Mechanic.create(
+      name: params[:name],
+      specialty: params[:specialty],
+      picture: params[:picture]
+    )
+    new_emp.to_json
+  end
+
+
+
   post "/appointments" do 
-    binding.pry
     new_customer = Customer.create(
       name: params[:name],
       email: params[:email],
@@ -47,19 +58,39 @@ class ApplicationController < Sinatra::Base
       issue: params[:issue],
       startDate: params[:startDate],
       completed: false,
+      name: params[:name],
+      email: params[:email],
+      carmodel: params[:carmodel],
       customer_id: new_customer.id,
       mechanic_id: params[:mechanic_id]
     )
     if !new_customer
       {error: "Customer not created"}.to_json
     else
-      {new_customer: new_customer, new_appointment: new_appointment}.to_json
+      new_customer.to_json
+      new_appointment.to_json
     end
   end 
 
-  # get "/appointments/:id" do 
+  
 
-  # end
+  patch '/appointments/:id' do
+    updateAppontment = Appointment.find(params[:id])
+    updateAppontment.update(
+      issue: params[:issue],
+      startDate: params[:startDate],
+      completed: false,
+      name: params[:name],
+      email: params[:email],
+      carmodel: params[:carmodel],
+      mechanic_id: params[:mechanic_id]
+    )
+    updateAppontment.to_json
+  end
+
+
+
+
 
   delete "/appointments/:id" do 
     dead_appt = Appointment.find(params[:id]).destroy

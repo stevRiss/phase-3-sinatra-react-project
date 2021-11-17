@@ -3,8 +3,17 @@ class Appointment <ActiveRecord::Base
     belongs_to :mechanic
 
     def self.total_appointments
-        Appointment.all.count
+        self.all.count
     end
 
-    # def self.total_completed_
+    def self.completed_appointments
+        Appointment.where(completed: true)
+    end
+
+    
+
+    def self.appointments_in_progress
+        Appointment.where(completed: false)
+    end
+
 end
