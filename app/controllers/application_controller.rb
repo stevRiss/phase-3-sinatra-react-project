@@ -11,9 +11,9 @@ class ApplicationController < Sinatra::Base
 
   get "/customers" do  
     {customers: Customer.all}.to_json
-    
   end  
 
+  
   get "/mechanics" do
     {mechanics: Mechanic.all}.to_json
   end
