@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2021_11_15_205515) do
 
   create_table "appointments", force: :cascade do |t|
-    t.string "appointment_reason"
-    t.datetime "appointment_date"
+    t.string "issue"
+    t.datetime "startDate"
     t.boolean "completed"
     t.integer "customer_id"
     t.integer "mechanic_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_205515) do
     t.string "name"
     t.string "email"
     t.string "password"
-    t.string "car_model"
+    t.string "carmodel"
     t.integer "phone_number"
   end
 

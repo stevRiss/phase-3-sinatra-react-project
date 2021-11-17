@@ -4,7 +4,7 @@ class CreateCustomers < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :email
       t.string :password
-      t.string :car_model
+      t.string :carmodel
       t.integer :phone_number
     end
   end

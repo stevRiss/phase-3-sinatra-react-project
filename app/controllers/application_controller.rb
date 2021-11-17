@@ -3,10 +3,10 @@ class ApplicationController < Sinatra::Base
   
 
   get "/" do
-    [{  customers: Customer.all, 
+    {  customers: Customer.all, 
         appointments: Appointment.all, 
         mechanics: Mechanic.all
-    }].to_json
+    }.to_json
   end
 
   get "/customers" do  
@@ -24,19 +24,42 @@ class ApplicationController < Sinatra::Base
   end
   
   get "/appointments" do
-    {appointments: Appointment.all}.to_json
+    {appointments: Appointment.all, customers: Customer.all}.to_json
   end
     
+  # get "/bookappointments" do 
+  #   [{
+  #     customers: Customer.all,
+  #     appointments: Appointment.all
+  #   }]
+  # end 
+
   post "/appointments" do 
+    binding.pry
+    new_customer = Customer.create(
+      name: params[:name],
+      email: params[:email],
+      carmodel: params[:carmodel]
+    )
+    
+
     new_appointment = Appointment.create(
-      appointment_reason: params[:appointment_reason],
-      appointment_date: params[:appointment_date],
-      completed: params[:completed],
-      customer_id: params[:customer_id],
+      issue: params[:issue],
+      startDate: params[:startDate],
+      completed: false,
+      customer_id: new_customer.id,
       mechanic_id: params[:mechanic_id]
     )
-    new_appointment.to_json
+    if !new_customer
+      {error: "Customer not created"}.to_json
+    else
+      {new_customer: new_customer, new_appointment: new_appointment}.to_json
+    end
   end 
+
+  # get "/appointments/:id" do 
+
+  # end
 
   delete "/appointments/:id" do 
     dead_appt = Appointment.find(params[:id]).destroy
