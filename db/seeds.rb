@@ -20,12 +20,12 @@ cust8 = Customer.create(name: "Holly Crowley", email: "holls34@gmail.com", passw
 cust9 = Customer.create(name: "Kyle Lyle", email: "kyly67@gmail.com", password: "kyle6", carmodel: "2019 Dodge Challenger", phone_number: 1234567898 )
 
 puts "Creating Appointments..."
-appt1 = Appointment.create(issue: "Transmission", startDate: DateTime.new(2021, 11, 16) , completed: false, customer_id: 2, mechanic_id: 1)
-appt2 = Appointment.create(issue: "Tansmission", startDate: DateTime.new(2021, 11, 17), completed: false, customer_id: 4, mechanic_id: 1 )
-appt3 = Appointment.create(issue: "Brakes",  startDate: DateTime.new(2021, 11, 17) , completed: false, customer_id: 5, mechanic_id: 2 )
-appt4 = Appointment.create(issue: "Electrical", startDate: DateTime.new(2021, 11, 18), completed: true, customer_id: 4, mechanic_id: 4 )
-appt5 = Appointment.create(issue: "Maintenance", startDate: DateTime.new(2021, 11, 15) , completed: false, customer_id: 7, mechanic_id: 3  )
-appt6 =  Appointment.create(issue: "Engine", startDate: DateTime.new(2021, 11, 20) , completed: true, customer_id: 6 , mechanic_id: 5 )
-appt7 = Appointment.create(issue: "Maintenance", startDate: DateTime.new(2021, 11, 19) , completed: false, customer_id: 3 , mechanic_id: 3 )
+appt1 = Appointment.create(name: "Billy Fresh", email: "fresh22@gmail.com", carmodel: "2018 Honda Accord", issue: "Transmission", startDate: DateTime.new(2021, 11, 16) , completed: false, customer_id: 2, mechanic_id: 1)
+appt2 = Appointment.create(name: "Lexi Pierce", email: "texlex33@gmail.com", carmodel: "2015 Kia Soul", issue: "Tansmission", startDate: DateTime.new(2021, 11, 17), completed: false, customer_id: 4, mechanic_id: 1 )
+appt3 = Appointment.create(name: "Jimmy Nuerons",email: "slimjim42@gmail.com", carmodel: "2020 Ford Raptor", issue: "Brakes",  startDate: DateTime.new(2021, 11, 17) , completed: false, customer_id: 5, mechanic_id: 2 )
+appt4 = Appointment.create(name: "Lexi Pierce", email: "texlex33@gmail.com", carmodel: "2015 Kia Soul",issue: "Electrical", startDate: DateTime.new(2021, 11, 18), completed: true, customer_id: 4, mechanic_id: 4 )
+appt5 = Appointment.create(name: "Robby Bong", email: "bongbing4@gmail.com", carmodel: "2017 Jeep Wrangler", issue: "Maintenance", startDate: DateTime.new(2021, 11, 15) , completed: false, customer_id: 7, mechanic_id: 3  )
+appt6 =  Appointment.create(name: "Bobby Bing", email: "bingbong2@gmail.com", carmodel: "2018 Subaru Outback", issue: "Engine", startDate: DateTime.new(2021, 11, 20) , completed: true, customer_id: 6 , mechanic_id: 5 )
+appt7 = Appointment.create(name: "Victoria Brinx", email: "brinxtruck23@gmail.com", carmodel: "2020 Mercedes C300", issue: "Maintenance", startDate: DateTime.new(2021, 11, 19) , completed: false, customer_id: 3 , mechanic_id: 3 )
 
 puts "✅ Done seeding!"
