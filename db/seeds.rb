@@ -23,9 +23,9 @@ puts "Creating Appointments..."
 appt1 = Appointment.create(issue: "Transmission", startDate: DateTime.new(2021, 11, 16) , completed: false, customer_id: 2, mechanic_id: 1)
 appt2 = Appointment.create(issue: "Tansmission", startDate: DateTime.new(2021, 11, 17), completed: false, customer_id: 4, mechanic_id: 1 )
 appt3 = Appointment.create(issue: "Brakes",  startDate: DateTime.new(2021, 11, 17) , completed: false, customer_id: 5, mechanic_id: 2 )
-appt4 = Appointment.create(issue: "Electrical", startDate: DateTime.new(2021, 11, 18), completed: false, customer_id: 4, mechanic_id: 4 )
+appt4 = Appointment.create(issue: "Electrical", startDate: DateTime.new(2021, 11, 18), completed: true, customer_id: 4, mechanic_id: 4 )
 appt5 = Appointment.create(issue: "Maintenance", startDate: DateTime.new(2021, 11, 15) , completed: false, customer_id: 7, mechanic_id: 3  )
-appt6 =  Appointment.create(issue: "Engine", startDate: DateTime.new(2021, 11, 20) , completed: false, customer_id: 6 , mechanic_id: 5 )
+appt6 =  Appointment.create(issue: "Engine", startDate: DateTime.new(2021, 11, 20) , completed: true, customer_id: 6 , mechanic_id: 5 )
 appt7 = Appointment.create(issue: "Maintenance", startDate: DateTime.new(2021, 11, 19) , completed: false, customer_id: 3 , mechanic_id: 3 )
 
 puts "✅ Done seeding!"

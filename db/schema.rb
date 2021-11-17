@@ -13,6 +13,9 @@
 ActiveRecord::Schema.define(version: 2021_11_15_205515) do
 
   create_table "appointments", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "carmodel"
     t.string "issue"
     t.datetime "startDate"
     t.boolean "completed"
