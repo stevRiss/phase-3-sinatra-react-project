@@ -29,9 +29,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get "/appointments" do
-    
-      
-      Appointment.all.to_json
+   Appointment.all.to_json
   end
     
   # get "/bookappointments" do 
@@ -79,8 +77,8 @@ class ApplicationController < Sinatra::Base
     end
   end 
 
-  
 
+  
   patch '/appointments/:id' do
     updateAppontment = Appointment.find(params[:id])
     updateAppontment.update(
@@ -94,10 +92,6 @@ class ApplicationController < Sinatra::Base
     )
     updateAppontment.to_json
   end
-
-
-
-
 
   delete "/appointments/:id" do 
     dead_appt = Appointment.find(params[:id]).destroy
