@@ -5,7 +5,12 @@ class ApplicationController < Sinatra::Base
   get "/" do
     {  all_customers: Customer.total_customers,  
         all_appointments: Appointment.total_appointments,
-        all_mechanics: Mechanic.total_mechanics
+        all_mechanics: Mechanic.total_mechanics,
+        completed_appointments: Appointment.completed_appointments,
+        in_progress_appointments: Appointment.appointments_in_progress,
+        each_mechanic_appointments: Mechanic.most_appointments,
+        num_mechanics_by_specialty: Mechanic.mechanics_by_specialty
+
     }.to_json
   end
 
@@ -24,7 +29,9 @@ class ApplicationController < Sinatra::Base
   end
   
   get "/appointments" do
-    Appointment.all.to_json
+    
+      
+      Appointment.all.to_json
   end
     
   # get "/bookappointments" do 
