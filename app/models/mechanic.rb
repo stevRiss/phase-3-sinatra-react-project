@@ -49,8 +49,9 @@ class Mechanic <ActiveRecord::Base
             appointments.store(name, total)
             
         end
-        arr << appointments
-        arr 
+        # arr << appointments
+        # arr 
+        appointments
         # appointments.min
     end
     
