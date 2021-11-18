@@ -104,4 +104,8 @@ class ApplicationController < Sinatra::Base
     dead_appt.to_json
   end
 
+  delete "/mechanics/:id" do 
+    dead_mechanic = Mechanic.find(params[:id]).destroy
+    dead_mechanic.to_json
+  end 
 end
